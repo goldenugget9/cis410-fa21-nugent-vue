@@ -1,7 +1,10 @@
 import { createApp } from "vue";
 import App from "./App.vue";
+import axios from "axios";
 
 import myRouter from "./route.js";
+
+axios.defaults.baseURL = "https://cis410-fa21-nugent-api.azurewebsites.net";
 
 const myApp = createApp(App);
 myApp.use(myRouter);
