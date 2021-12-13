@@ -1,11 +1,19 @@
 <template>
   <div>
-    <h1>Subscribe to a Podcast</h1>
+    <br />
+    <h1 class="text-primary">Successfully Subscribed</h1>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      ifSubscribed: false,
+      errorMessage: null,
+    };
+  },
+};
 </script>
 
 <style></style>
