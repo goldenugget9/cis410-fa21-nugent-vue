@@ -2,11 +2,11 @@
   <div class="container-fluid">
     <h4>Podcast Subscription App</h4>
     <div class="row justify-content-center">
-      <div class="col-md-10 col-lg-7">
+      <div class="col-8">
         <div>
           <h1>Home</h1>
           <br />
-          <div class="my-container">
+          <div class="container-fluid">
             <router-link :to="`/podcasts/4`"
               ><img src="../assets/csu-logo-300px.png" /></router-link
             ><router-link :to="`/podcasts/1`"
