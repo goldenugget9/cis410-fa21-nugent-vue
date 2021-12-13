@@ -8,12 +8,23 @@ import Podcasts from "./components/Podcasts.vue";
 import Signup from "./components/Signup.vue";
 import SubscriptionCreate from "./components/SubscriptionCreate.vue";
 import Listener from "./components/Listener.vue";
+import myStore from "./store.js";
 
 const router = createRouter({
   history: createWebHistory(),
   routes: [
     { path: "/", component: HomePage },
-    { path: "/Listener", component: Listener },
+    {
+      path: "/Listener",
+      component: Listener,
+      beforeEnter(to, from, next) {
+        if (myStore.state.token) {
+          next();
+        } else {
+          next("/");
+        }
+      },
+    },
     { path: "/Login", component: Login },
     { path: "/Podcasts", component: Podcasts },
     {
