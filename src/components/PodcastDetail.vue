@@ -18,12 +18,14 @@
     </div>
 
     <br />
-    <router-link
+    <!-- <router-link
       v-if="auth"
       :to="`/podcasts/${this.$route.params.pk}/subscription`"
-    >
-      <button class="btn btn-success" @click="subscribe">Subscribe</button>
-    </router-link>
+    > -->
+    <button v-if="auth" class="btn btn-success" @click="subscribe">
+      Subscribe
+    </button>
+    <!-- </router-link> -->
     <p v-if="errorMessage" class="text-danger">
       {{ errorMessage }}
     </p>
