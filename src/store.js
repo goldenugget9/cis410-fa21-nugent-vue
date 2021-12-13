@@ -1,5 +1,5 @@
 import { createStore } from "vuex";
-
+import axios from "axios";
 export default createStore({
   state: {
     token: null,
@@ -10,10 +10,19 @@ export default createStore({
     storeTokenInApp(state, myToken) {
       state.token = myToken;
     },
-
     storeUserInApp(state, theUser) {
       state.user = theUser;
     },
+    storePodcasts(state, podcasts) {
+      state.podcasts = podcasts;
+    },
   },
-  actions: {},
+  actions: {
+    getPodcasts({ commit }) {
+      axios.get("/podcasts").then((aResponse) => {
+        console.log(aResponse);
+        commit("storePodcasts", aResponse.data);
+      });
+    },
+  },
 });
