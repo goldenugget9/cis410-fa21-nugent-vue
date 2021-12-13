@@ -19,7 +19,7 @@
         >
           <th>
             <router-link :to="`/podcasts/${thisSubscription.PodcastFK}`">{{
-              thisSubscription.PodcastFK
+              thisSubscription.title
             }}</router-link>
           </th>
           <th>{{ thisSubscription.date }}</th>
@@ -41,6 +41,7 @@ export default {
   computed: {
     firstName() {
       console.log("store so far", this.$store.state);
+
       return this.$store.state.user.NameFirst;
     },
   },
@@ -52,7 +53,7 @@ export default {
         },
       })
       .then((theResponse) => {
-        console.log(theResponse);
+        console.log("This is the ressponse", theResponse);
         this.subscriptionsByUser = theResponse.data;
       })
       .catch(() => {
